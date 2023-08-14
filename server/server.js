@@ -8,6 +8,9 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
+const templateRouter = require('./routes/template.router')
+
+app.use('/api/expenses', templateRouter);
 
 // Express middleware
 app.use(express.json());
