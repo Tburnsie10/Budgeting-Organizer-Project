@@ -15,11 +15,11 @@ router.get('/',rejectUnauthenticated, (req, res) => {
     console.log(req.user);
     const queryText = 'SELECT * FROM "expenses";';
     pool.query(queryText).then((results) => {
-        res.send(result.rows);
+        res.send(results.rows);
     }).catch((error) => {
         console.log(error);
         res.sendStatus(500)
     })
 });
-
+// todo add a post route
 module.exports = router;

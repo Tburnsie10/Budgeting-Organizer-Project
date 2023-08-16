@@ -32,14 +32,7 @@ const registrationMessage = (state = '', action) => {
   }
 };
 
-const expenses = (state = [], action) => {
-  switch (action.type) {
-    case 'ADD_EXPENSE':
-      return [...state, action.payload];
-    default:
-      return state;
-  }
-};
+
 
 // make one object that has keys loginMessage, registrationMessage
 // these will be on the redux state at:
@@ -47,5 +40,5 @@ const expenses = (state = [], action) => {
 export default combineReducers({
   loginMessage,
   registrationMessage,
-  expenses
+  
 });
