@@ -13,8 +13,8 @@ router.get('/',rejectUnauthenticated, (req, res) => {
     console.log(req.isAuthenticated());
     //req.user is the logged in user
     console.log(req.user);
-    const queryText = 'SELECT * FROM "expenses";';
-    pool.query(queryText).then((results) => {
+    const queryText = 'SELECT * FROM "expenses" WHERE user_id = $1;';
+    pool.query(queryText, [req.user.id]).then((results) => {
         res.send(results.rows);
     }).catch((error) => {
         console.log(error);

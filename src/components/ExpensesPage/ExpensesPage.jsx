@@ -20,12 +20,22 @@ useEffect(() => {
     let amount = inputs[1].value
     let date = inputs[2].value
 
-    let obj = {type:'ADD_EXPENSE', payload:[name, amount, date]}
+    let obj = {type:'ADD_EXPENSE', payload:{name, amount, date}}
     dispatch(obj)
     console.log(expenses)
   }
+
+  function expenseTotal() {
+    let total = 0
+    expenses.map((expense) => {
+      total += Number(expense.amount)
+    }) 
+    return total;
+  }
+
   return (
     <div className="container">
+      <div>Total Expenses:{expenseTotal()}</div>
       <h2>Expenses</h2>
       <Table>
         <thead>
