@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import BudgetPage from '../BudgetPage/BudgetPage';
+import LogOutButton from '../LogOutButton/LogOutButton';
 
 import './App.css';
 
@@ -58,8 +59,10 @@ function App() {
             exact
             path="/user"
           >
-            <UserPage />
+            <UserPage></UserPage>
             <BudgetPage/>
+          
+          <LogOutButton className="btn" />
           </ProtectedRoute>
 
           <ProtectedRoute

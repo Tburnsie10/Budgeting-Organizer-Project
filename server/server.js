@@ -10,6 +10,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const expensesRouter = require('./routes/expenses.router')
 const templateRouter = require('./routes/template.router')
+const incomeRouter = require('./routes/income.router')
 
 
 
@@ -26,6 +27,8 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/expenses', expensesRouter);
+app.use('/api/income', incomeRouter)
+
 
 // Serve static files
 app.use(express.static('build'));

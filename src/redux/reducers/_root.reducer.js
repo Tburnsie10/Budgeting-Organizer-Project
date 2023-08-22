@@ -2,7 +2,9 @@ import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import expenses from './expenses.reducer';
-
+import newExpense from './new_expense.reducer';
+import income from './income.reducer';
+import newIncome from './new_income.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -12,7 +14,10 @@ import expenses from './expenses.reducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, 
-  expenses // will have an id and username if someone is logged in
+  expenses,
+  newExpense, // will have an id and username if someone is logged in
+  income,
+  newIncome,
 });
 
 export default rootReducer;

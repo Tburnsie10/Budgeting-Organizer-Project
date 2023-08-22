@@ -19,9 +19,10 @@ function LandingPage() {
 
       <div className="grid">
         <div className="grid-col grid-col_8">
-          <p>
-            This tool will help you build a budget
-            
+          <p className="top">
+            <h3>This is a tool I developed to help you build your own budget.</h3>
+            <img src="https://usalg.org/wp-content/uploads/2021/01/Budgeting-1.jpg" width={380} height={380} alt="Budget Photo"/>
+
           </p>
         </div>
         <div className="grid-col grid-col_4">

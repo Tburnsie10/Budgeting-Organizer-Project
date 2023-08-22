@@ -1,0 +1,15 @@
+.top {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    text-align: center;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh; /* Adjust this value based on your needs */
+  }
+  
+  
+  

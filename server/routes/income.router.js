@@ -10,10 +10,11 @@ const {
 
 router.get('/',rejectUnauthenticated, (req, res) => {
     //checks to see if the user is logged in
+    console.log("income get recieved")
     console.log(req.isAuthenticated());
     //req.user is the logged in user
     console.log(req.user);
-    const queryText = 'SELECT * FROM "expenses" WHERE user_id = $1;';
+    const queryText = 'SELECT * FROM "income" WHERE user_id = $1;';
     pool.query(queryText, [req.user.id]).then((results) => {
         res.send(results.rows);
     }).catch((error) => {
@@ -24,20 +25,22 @@ router.get('/',rejectUnauthenticated, (req, res) => {
 
 router.delete('/:id',rejectUnauthenticated, (req, res) => {
     //checks to see if the user is logged in
+    console.log("income delete recieved")
     console.log(req.isAuthenticated());
     //req.user is the logged in user
     console.log(req.params);
-    const queryText = `DELETE FROM "expenses" WHERE id='${req.params.id}';`;
+    const queryText = `DELETE FROM "income" WHERE id='${req.params.id}';`;
     pool.query(queryText);
     res.sendStatus(201);
 });
 
 
 router.post('/', rejectUnauthenticated, (req, res) => {
+    console.log("income post recieved")
     console.log(req.isAuthenticated());
     console.log(req.user);
     console.log(req.body);
-    const queryText = `INSERT INTO "expenses"  (expense_name, amount, expense_date, user_id)
+    const queryText = `INSERT INTO "income"  (income_name, amount, income_date, user_id)
 VALUES ('${req.body[0]}', '${req.body[1]}', '${req.body[2]}', '${req.body[3]}');`;
 pool.query(queryText)
 
