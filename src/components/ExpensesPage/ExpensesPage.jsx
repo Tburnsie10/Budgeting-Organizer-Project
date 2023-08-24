@@ -96,7 +96,7 @@ function ExpensesPage() {
           })}
         </tbody>
       </Table>
-      <div className="top">Total Expenses:{expenseTotal()}</div>
+      <div className="top"><h3>Total Expenses:{expenseTotal()}</h3></div>
       <div id="input">
         <input placeholder="name"></input>
         <input type="number" placeholder="amount"></input>

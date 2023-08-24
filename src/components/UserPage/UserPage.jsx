@@ -11,7 +11,7 @@ function UserPage() {
   const getTotal = (array) => {
     let total = 0;
     array.map(x => {
-      total += x.amount
+      total += Number(x.amount)
     }) 
     return total;
   }

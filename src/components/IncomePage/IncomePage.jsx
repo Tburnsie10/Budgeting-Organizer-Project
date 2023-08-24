@@ -99,7 +99,7 @@ function IncomePage() {
           })}
         </tbody>
       </Table>
-      <div className="top">Total Income:{incomeTotal()}</div>
+      <div className="top"><h3>Total Income:{incomeTotal()}</h3></div>
       <div id="input">
         <input placeholder="name"></input>
         <input type="number" placeholder="amount"></input>
